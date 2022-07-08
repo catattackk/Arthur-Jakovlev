@@ -10,20 +10,27 @@
 
 <body>
     <div style="position: relative; background-color: aqua; width: 1000px; height: 1000px;">
-        <div id="arthur" style="position: absolute; background-color: blue; width: 100px; height: 100px; bottom: -50px;">
+        <div id="arthur"
+            style="position: absolute; background-color: blue; width: 100px; height: 100px; right: 500px; bottom: -50px;">
         </div>
     </div>
 
     <script>
-        var left = -50;
-
+        var bottom = 1000
+        var left = 1000;
         var pede = document.getElementById("arthur");
+        var direction = -1
+
 
         function liigutaParemale() {
-            pede.style.left = "" + left + "px";
-            left = left + 1; 
+            pede.style.left.bottom = "" + left + bottom + "px";
+            left = left + bottom + direction;
+
+            if (left < 10) {direction = +1}
+            if (left > 1000) {direction = -1}
+
         }
-        setInterval(liigutaParemale, 1000/60);
+        setInterval(liigutaParemale, 1000 / 600);
     </script>
 
 
